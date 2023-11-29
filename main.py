@@ -34,5 +34,5 @@ if data_file is not None:
   st.header('Covariance')
   correlation_matrix = np.corrcoef(df, rowvar=False)
   fig, ax = plt.subplots()
-  sns.heatmap(correlation_matrix, annot=True, cmap='reds', fmt=".2f", ax=ax)
+  sns.heatmap(correlation_matrix, annot=True, cmap='Reds', fmt=".2f", ax=ax)
   st.pyplot(fig)
