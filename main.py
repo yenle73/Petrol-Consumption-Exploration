@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import io
 import matplotlib.pyplot as plt
+import numpy as np
 
 st.title("Data Exploration")
 
@@ -28,3 +29,7 @@ if data_file is not None:
     plt.xlabel(col)
     plt.ylabel('Quanity')
     st.pyplot(fig)
+
+  st.header('Covariance')
+  correlation_matrix = np.corrcoef(df, rowvar=False)
+  st.write(correlation_matrix)
