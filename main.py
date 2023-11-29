@@ -36,3 +36,13 @@ if data_file is not None:
   fig, ax = plt.subplots()
   sns.heatmap(correlation_matrix, annot=True, cmap='Reds', fmt=".2f", ax=ax)
   st.pyplot(fig)
+
+  output = st.radio('Chooses a dependent variable', df.columns)
+  st.header('Relationship between vảiables')
+  for col in list(df.columns):
+    if col != output:
+      fig, ax = plt.subplots()
+      ax.scatter(x=df[col], y=df[output])
+      plt.xlabel(col)
+      plt.ylabel(output)
+      st.pyplot(fig)
