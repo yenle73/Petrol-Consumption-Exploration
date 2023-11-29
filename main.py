@@ -3,6 +3,7 @@ import pandas as pd
 import io
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 st.title("Data Exploration")
 
@@ -32,4 +33,6 @@ if data_file is not None:
 
   st.header('Covariance')
   correlation_matrix = np.corrcoef(df, rowvar=False)
-  st.write(correlation_matrix)
+  fig, ax = plt.subplots()
+  sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax)
+  st.pyplot(fig)
