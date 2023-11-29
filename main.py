@@ -4,7 +4,7 @@ import pandas as pd
 st.title("Data Exploration")
 
 st.header('Uploading data')
-data_file = st.file_uploader("Choose a file")
+data_file = st.file_uploader("Choose a file", type=(['.csv']))
 
 st.header('Visualizing data')
 if data_file is not None:
@@ -13,3 +13,6 @@ if data_file is not None:
 
 st.header('Descriptive Statistics')
 st.table(df.describe())
+
+st.header('Data Information')
+st.table(df.info())
