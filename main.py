@@ -15,4 +15,4 @@ if data_file is not None:
   st.table(df.describe())
 
   st.header('Data Information')
-  st.table(df.info())
+  st.write(df.info())
