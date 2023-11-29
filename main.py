@@ -10,3 +10,6 @@ st.header('Visualizing data')
 if data_file is not None:
   df = pd.read_csv(data_file)
   st.dataframe(df)
+
+st.header('Descriptive Statistics')
+st.table(df.describe())
