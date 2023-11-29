@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import io
 
 st.title("Data Exploration")
 
@@ -15,4 +16,6 @@ if data_file is not None:
   st.table(df.describe())
 
   st.header('Data Information')
-  st.write(df.info())
+  buffer = io.StringIO
+  df.info(buf=buffer)
+  st.write(buffer.getvalue())
